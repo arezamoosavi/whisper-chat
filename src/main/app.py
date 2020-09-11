@@ -67,8 +67,7 @@ class Notifier:
     async def _notify(self, message: str, room_name: str):
         living_connections = []
         while len(self.connections[room_name]) > 0:
-            # Looping like this is necessary in case a disconnection is handled
-            # during await websocket.send_text(message)
+
             websocket = self.connections[room_name].pop()
             await websocket.send_text(message)
             living_connections.append(websocket)
