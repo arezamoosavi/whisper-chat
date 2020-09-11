@@ -23,12 +23,12 @@
     url_segs = window.location.pathname.split("/");
     var room_name = url_segs[1]
     var current_user = url_segs[2]
-    var ws = new WebSocket("ws://0.0.0.0:80/ws/" + room_name);
+    var ws = new WebSocket("ws://localhost:80/ws/" + room_name);
     var messages = document.getElementById('messages')
     function checkWebSocket(event) {
         if (ws.readyState === WebSocket.CLOSED) {
             console.log("WebSocket CLOSED: Reopening")
-            ws = new WebSocket("ws://0.0.0.0:80/ws/" + room_name);
+            ws = new WebSocket("ws://localhost:80/ws/" + room_name);
         }
     }
     ws.onmessage = function (event) {
