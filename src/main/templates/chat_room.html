@@ -23,12 +23,19 @@
     url_segs = window.location.pathname.split("/");
     var room_name = url_segs[1]
     var current_user = url_segs[2]
-    var ws = new WebSocket("ws://localhost:80/ws/" + room_name);
+
+    if (window.location.protocol == "https:") {
+        var ws_scheme = "wss://";
+    } else {
+        var ws_scheme = "ws://"
+    };
+
+    var ws = new WebSocket(ws_scheme + location.host + "/ws/" + room_name);
     var messages = document.getElementById('messages')
     function checkWebSocket(event) {
         if (ws.readyState === WebSocket.CLOSED) {
             console.log("WebSocket CLOSED: Reopening")
-            ws = new WebSocket("ws://localhost:80/ws/" + room_name);
+            ws = new WebSocket(ws_scheme + location.host + "/ws/" + room_name);
         }
     }
     ws.onmessage = function (event) {
