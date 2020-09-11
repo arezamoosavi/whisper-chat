@@ -1,0 +1,7 @@
+starlette<=0.13.6
+uvicorn
+fastapi
+pydantic
+python-multipart
+aiofiles
+Jinja2
