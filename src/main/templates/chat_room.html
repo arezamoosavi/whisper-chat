@@ -42,6 +42,7 @@
         // Get message back from websocket and display
         var message = document.createElement('div');
         message.setAttribute('class', 'message');
+        message.style.clear = 'both';
 
         var event_data = JSON.parse(event.data);
         var text_str = event_data.message
