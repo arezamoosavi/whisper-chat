@@ -40,7 +40,7 @@
     }
     ws.onmessage = function (event) {
         // Get message back from websocket and display
-        var message = document.createElement('li');
+        var message = document.createElement('div');
         message.setAttribute('class', 'message');
 
         var event_data = JSON.parse(event.data);
