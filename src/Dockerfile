@@ -25,13 +25,13 @@ RUN update-alternatives --set python /usr/bin/python3.7
 
 RUN pip3 install --upgrade pip
 
-COPY requirements.txt /requirements.txt
+COPY ./src/requirements.txt /requirements.txt
 RUN pip3 install --no-cache-dir -r /requirements.txt
 
 RUN mkdir -p /main
-COPY ./main /main
+COPY ./src/main /main
 
-COPY run.sh /run.sh
+COPY ./src/run.sh /run.sh
 RUN chmod a+rwx /run.sh
 RUN chmod -R a+rwx /main
 
