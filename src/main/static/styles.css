@@ -68,18 +68,18 @@ body{
     background: #d1cdcd;
     -ms-overflow-style: none;
 }
-ul .sender_tag_right {
+li .sender_tag_right {
     display: inline-block;
 }
-ul .sender_tag_left{
+li .sender_tag_left{
     display: inline-block;
 }
-ul:hover .sender_tag_right{
+li:hover .sender_tag_right{
     display: contents;
     FONT-WEIGHT: 100;
     FONT-SIZE: smaller;
 }
-ul:hover .sender_tag_left{
+li:hover .sender_tag_left{
     display: contents;
     FONT-WEIGHT: 100;
     FONT-SIZE: smaller;
